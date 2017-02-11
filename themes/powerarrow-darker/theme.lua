@@ -16,8 +16,8 @@ local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-darker"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "xos4 Terminus 9"
-theme.fg_normal                                 = "#DDDDFF"
-theme.fg_focus                                  = "#EA6F81"
+theme.fg_focus                                  = "#DDDDDD"
+theme.fg_normal                                 = "#A0A0A0"
 theme.fg_urgent                                 = "#CC9393"
 theme.bg_normal                                 = "#1A1A1A"
 theme.bg_focus                                  = "#313131"
@@ -265,10 +265,10 @@ function theme.at_screen_connect(s)
             wibox.widget.systray(),
             spr,
             arrl_ld,
-            volicon,
-            theme.volume.widget,
-            arrl_ld,
-            wibox.container.background(mailicon, theme.bg_focus),
+            wibox.container.background(volicon, theme.bg_focus),
+            wibox.container.background(theme.volume.widget, theme.bg_focus),
+            --arrl_ld,
+            --wibox.container.background(mailicon, theme.bg_focus),
             --wibox.container.background(mail.widget, theme.bg_focus),
             arrl_dl,
             memicon,
