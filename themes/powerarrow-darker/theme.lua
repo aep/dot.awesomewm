@@ -214,10 +214,8 @@ local neticon = wibox.widget.imagebox(theme.widget_net)
 local net1 = net_widgets.wireless({font="xos4 Terminus 9", interface="wlp4s0"})
 local net2 = net_widgets.indicator({font="xos4 Terminus 9", interfaces  = {"enp0s31f6"}});
 
-
-
 -- Toggl
-togglwidget = wibox.widget.textbox(' ');
+togglwidget = wibox.widget.textbox("<span color='#666'>&#11044; init </span>");
 
 -- Separators
 local spr     = wibox.widget.textbox(' ')
