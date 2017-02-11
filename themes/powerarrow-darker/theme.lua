@@ -218,6 +218,10 @@ local net = lain.widget.net({
     end
 })
 
+
+-- Toggl
+togglwidget = wibox.widget.textbox(' ');
+
 -- Separators
 local spr     = wibox.widget.textbox(' ')
 local arrl_dl = separators.arrow_left(theme.bg_focus, "alpha")
@@ -289,10 +293,12 @@ function theme.at_screen_connect(s)
             wibox.container.background(neticon, theme.bg_focus),
             wibox.container.background(net.widget, theme.bg_focus),
             arrl_dl,
-            clock.widget,
-            spr,
+            togglwidget,
             arrl_ld,
-            wibox.container.background(s.mylayoutbox, theme.bg_focus),
+            wibox.container.background(clock.widget, theme.bg_focus),
+            wibox.container.background(spr, theme.bg_focus),
+            arrl_dl,
+            s.mylayoutbox,
         },
     }
 end
