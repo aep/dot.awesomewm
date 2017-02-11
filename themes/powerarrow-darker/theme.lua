@@ -10,6 +10,8 @@ local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
+local net_widgets = require("net_widgets")
+
 local os    = { getenv = os.getenv }
 
 local theme                                     = {}
@@ -209,14 +211,9 @@ theme.volume = lain.widget.alsa({
 
 -- Net
 local neticon = wibox.widget.imagebox(theme.widget_net)
-local net = lain.widget.net({
-    settings = function()
-        widget:set_markup(markup.font(theme.font,
-                          markup("#7AC82E", " " .. net_now.received)
-                          .. " " ..
-                          markup("#46A8C3", " " .. net_now.sent .. " ")))
-    end
-})
+local net1 = net_widgets.wireless({font="xos4 Terminus 9", interface="wlp4s0"})
+local net2 = net_widgets.indicator({font="xos4 Terminus 9", interfaces  = {"enp0s31f6"}});
+
 
 
 -- Toggl
@@ -290,8 +287,9 @@ function theme.at_screen_connect(s)
             baticon,
             bat.widget,
             arrl_ld,
-            wibox.container.background(neticon, theme.bg_focus),
-            wibox.container.background(net.widget, theme.bg_focus),
+            --wibox.container.background(neticon, theme.bg_focus),
+            wibox.container.background(net1, theme.bg_focus),
+            wibox.container.background(net2, theme.bg_focus),
             arrl_dl,
             togglwidget,
             arrl_ld,

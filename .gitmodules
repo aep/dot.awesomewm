@@ -1,3 +1,6 @@
 [submodule "lain"]
 	path = lain
 	url = https://github.com/copycat-killer/lain.git
+[submodule "net_widgets"]
+	path = net_widgets
+	url = git@github.com:plotnikovanton/net_widgets.git
